@@ -1,5 +1,2 @@
 **node_modules
 *.sqlite3
-sqldiff.exe
-sqlite3_analyzer.exe
-sqlite3.exe
