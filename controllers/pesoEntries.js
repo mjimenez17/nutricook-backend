@@ -7,13 +7,13 @@ const {
 } = require("../services/pesoEntries");
 
 exports.getEntries = async function (request, response) {
-	const pesoEntry = await findAll();
+	const pesoEntries = await findAll();
 	response.status(200).json(posts);
 };
 
 exports.getEntry = async function (request, response) {
 	const { id } = request.params;
-	const pesoEntrie = await findById(id);
+	const pesoEntry = await findById(id);
 	response.status(200).json(post);
 };
 

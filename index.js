@@ -1,8 +1,5 @@
 require("dotenv").config();
 
-const { connect } = require('./models/sequelize');
-connect();
-
 const { initDatabase } = require('./db');
 initDatabase();
 
@@ -13,6 +10,7 @@ app.use(express.json());
 
 const userRouter = require("./routers/user");
 const pesoEntriesRouter = require("./routers/pesoEntries");
+const especialistaRouter = require("./routers/especialista");
 
 const authRouter = require("./routers/auth")
 
@@ -22,6 +20,7 @@ const unknownError = require("./middlewares/unknown-error");
 // Rutas
 app.use(pesoEntriesRouter);
 app.use(userRouter);
+app.use(especialistaRouter);
 
 app.use(authRouter);
 app.use(validationError);

@@ -20,7 +20,7 @@ exports.connect = async function () {
 
 exports.sync = async function () {
     try {
-        await sequelize.sync({ force: true });
+        await sequelize.sync({ force: false });
         console.log('> Base de datos actualizada');
     } catch (e) {
         console.error('> Error, no se puede actualizar la base de datos');
