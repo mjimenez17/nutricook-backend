@@ -1,4 +1,4 @@
-const { insert } = require('../services/especialista');
+const { insert, findByCedula, findAll } = require('../services/especialista');
 
 exports.createEspecialista = async function (request, response) {
 	const {cedula, adress, phone, age, firstName, lastName, gender, email, nickname, password, } = request.body;
@@ -13,6 +13,6 @@ exports.getEspecialistas = async function (request, response) {
 
 exports.getEspecialista = async function (request, response) {
 	const { cedula } = request.params;
-	const Especialista = await findById(cedula);
+	const Especialista = await findByCedula(cedula);
 	response.status(200).json(post);
 };
