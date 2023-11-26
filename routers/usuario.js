@@ -9,7 +9,7 @@ const { creaUsuarioSchema } = require("../validations/usuario.js");
 router.post(
   "/registro",
   validator.body(creaUsuarioSchema),
-  procesaNuevoUsuario
+  procesaNuevoUsuario,
 );
 
 module.exports = router;

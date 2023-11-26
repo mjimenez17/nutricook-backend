@@ -19,13 +19,9 @@ const app = express();
  * Incluye los agentes intermedios.
  */
 const cors = require("cors");
-const validationError = require("./middlewares/validation-error");
-const unknownError = require("./middlewares/unknown-error");
 
 app.use(cors());
 app.use(express.json());
-app.use(validationError);
-app.use(unknownError);
 
 /**
  * Especifica las rutas.
@@ -37,6 +33,15 @@ const recetasFavoritasRouter = require("./routers/receta-favorita");
 app.use(sesionRouter);
 app.use(usuarioRouter);
 app.use(recetasFavoritasRouter);
+
+/**
+ * Proporciona los agentes para mostrar los errores.
+ */
+const validationError = require("./middlewares/validation-error");
+const unknownError = require("./middlewares/unknown-error");
+
+app.use(validationError);
+app.use(unknownError);
 
 /**
  * Arranca la aplicación. :)
